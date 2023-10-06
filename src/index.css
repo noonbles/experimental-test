@@ -1,13 +1,31 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  /* used for literally anything that needs a background/backdrop */
+  .dark-wrapper {
+    @apply bg-dGrey-100 drop-shadow-md rounded-xl p-2;
+  }
+
+  .wrapper {
+    @apply bg-dGrey-200 drop-shadow-md rounded-xl p-2;
+  }
+
+  /* used for header text */
+  .big-text {
+    @apply font-bold text-white text-lg;
+  }
+
+  .reg-text {
+    @apply font-normal text-white text-base;
+  }
+
+  .good-text {
+    @apply font-bold text-green-300 text-base;
+  }
+
+  .highlight {
+    @apply bg-gradient-to-l from-blue-300 to-blue-500 rounded-xl p-2 absolute top-0 left-0 right-0 bottom-0 -z-10;
+  }
 }
